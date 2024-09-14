@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+
+        a{
+            
+            font-family: "inter", sans-serif;
+            font-weight: 500; /* Mengatur ketebalan */
+            font-size: 1rem;   /* Mengatur ukuran font */
+
+        }
+        .gradient-btn{
+            background: rgb(40, 40, 40); /* Gradien dengan arah 45 derajat */
+            color: white; /* Warna teks */
+            border: none; 
+            transition: all 0.5s;
+            
+        }
+        
+
+        .gradient-btn:hover {
+            background: rgb(76, 76, 76); 
+            color: white;
+            transform: translateY(-5px);/* Gradien terbalik saat hover */
+        }
+        
+        .fw-weight{
+            font-weight: 500;
+            align-items: center;
+        }
+        .btn-outline-warning{
+          transition: all 0.5s;
+        }
+        .btn-outline-warning:hover{
+          transform: translateY(-5px);
+        }
+        
+        .nav-item:hover{
+          text-decoration: underline;
+
+        }
+        .nav-link{
+          color: rgb(92, 91, 91);
+        }
+        .nav-link:hover{
+          color: rgb(49, 49, 49);
+          text-decoration: underline;
+
+        }
+        .semibold {
+          font-weight: 600 !important;
+
+
+        }
+        .fixed-top{
+          background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang putih dengan transparansi */
+          backdrop-filter: blur(10px); /* Efek blur latar belakang */
+        }
+        .problem-solve p{
+          font-size: 0.9rem;
+        }
+        .texth1{
+          font-size: 2rem;
+        }
+        .aboutus{
+          font-size: 1.5rem !important;
+          color: rgb(75, 75, 75) !important;
+        }
+        .quotes h1{
+          font-size: 1.5rem;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-us h1{
+          opacity: 0;
+          transform: translateY(20px); /* Muncul dari bawah */
+          animation: fadeInUp 1s ease-in-out forwards;
+        }
+        .about-us p{
+          opacity: 0;
+          transform: translateY(20px); /* Muncul dari bawah */
+          animation: fadeInUp 1.5s ease-in-out forwards;
+          animation-delay: 0.25s; /* Tunda animasi untuk muncul setelah h1 */
+        }
+        .about-us img{
+          opacity: 0;
+          transform: translateY(20px); /* Muncul dari bawah */
+          animation: fadeInUp 1.5s ease-in-out forwards;
+          animation-delay: 0.25s; /* Tunda animasi untuk muncul setelah h1 */
+        }
+
+
+        .mision h1 {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .mision h1.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .problem h1 {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .problem h1.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .problem p {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .problem p.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .solution h1 {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .solution h1.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .solution p {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .solution p.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .katakata h1 {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .katakata h1.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .katakata p {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease-out, transform 1s ease-out;
+        }
+        .katakata p.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .webspacing {
+          word-spacing: 3px;
+        }
+
+        @media (max-width: 992px) {
+          .about-us img{
+            transform: none;
+            animation: none;
+            display: none;
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+
+          }
+          .hamburger-icon{
+            width: 40px;
+            height: auto;
+
+          }
+        }
+
+        @media (min-width: 768px) {
+          p {
+            font-size: 1rem;
+        
+          }
+          .content-text{
+            font-size: 1.2rem !important;
+          }
+          .fs-4{
+            font-size: 1.3rem !important;
+          }
+          .gambar-logo{
+            height: 40px !important;
+            width: auto;
+          }
+        
+        
+      
+        }
+
+        @media (min-width: 576px) {
+          p {
+            font-size: 1rem;
+        
+          }
+          .content-text{
+            font-size: 1.1rem !important;
+          }
+          .fs-4{
+            font-size: 1.2rem !important;
+          }
+          .gradient-btn{
+            font-size: 1.1rem !important;
+            
+          }
+          .btn-outline-warning{
+            font-size: 1.1rem !important;
+          }
+          .nav-link{
+            font-size: 0.9rem;
+          }
+          .gambar-logo{
+            height: 40px;
+            width: auto;
+          }
+          .pena {
+            font-size: 1.2rem;
+          }
+          .subfooter{
+            font-size: 1rem;
+          }
+          .display-10{
+            font-size: 1.3rem !important;
+          }
+       
+        }
+        @media (max-width: 576px) {
+          p {
+            font-size: 0.7rem;
+        
+          }
+          .content-text{
+            font-size: 0.8rem !important;
+          }
+          .fs-4{
+            font-size: 0.9rem !important;
+          }
+          .gradient-btn{
+            font-size: 0.9rem !important;
+            
+          }
+          .btn-outline-warning{
+            font-size: 0.8rem !important;
+          }
+          .nav-link{
+            font-size: 0.6rem;
+          }
+          .gambar-logo{
+            height: 20px;
+            width: auto;
+          }
+          .pena {
+            font-size: 0.9rem;
+          }
+          .display-2 {
+            font-size:2.4rem ;
+          }
+          .display-5 {
+            font-size: 1.8rem;
+          }
+          .fitur {
+            font-size: 1rem !important;
+          }
+          .gambar-fitur img{
+            height: 20px;
+
+          }
+          .subfooter{
+            font-size: 0.8rem;
+          }
+          .display-10{
+            font-size: 1.3rem !important;
+          }
+       
+        }
+
+    </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom fixed-top px-3">
+      <!-- Logo di kiri -->
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <h4 class="fw-weight"><img src="icon/new logo2.png" height="40" alt=""> Pena</h4>
+        </a>
+      </div>
+  
+      <!-- Navbar untuk desktop (tengah) -->
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 d-none d-md-flex">
+        <li><a href="index.html" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="literasi.html" class="nav-link px-2">Literasi</a></li>
+        <li><a href="#" class="nav-link px-2">Diskusi</a></li>
+        <li><a href="about.html" class="nav-link px-2">About</a></li>
+      </ul>
+  
+      <!-- Login dan Sign-up untuk desktop -->
+      <div class="col-md-3 text-end d-none d-md-block">
+        <button type="button" class="btn btn-outline-warning me-2">Login</button>
+        <button type="button" class="btn gradient-btn">Sign-up</button>
+      </div>
+  
+      <!-- Tombol hamburger di kanan untuk tampilan mobile -->
+      <button class="navbar-toggler custom-toggler d-md-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <img src="icon/list.svg" alt="Menu" class="hamburger-icon">
+      </button>
+    </header>
+  </div>
+  
+  <!-- Offcanvas (Menu Hamburger) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Menu dalam hamburger -->
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="literasi.html">Literasi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Diskusi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+      <!-- Login dan Sign-up di dalam menu hamburger -->
+      <div class="d-flex mt-3">
+        <button type="button" class="btn btn-outline-warning me-2">Login</button>
+        <button type="button" class="btn gradient-btn">Sign-up</button>
+      </div>
+    </div>
+  </div>
+  
+    <div class="container">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-0 my-0 px-5 about-us flex-sm-column-reverse flex-column-reverse flex-md-column-reverse">
+          <div class="col-10 col-sm-8 col-lg-7 ">
+            <img src="image/literasiimage.svg" class="d-block mx-lg-auto img-fluid gambar" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-5 ">
+            <h1 class="aboutus text-body-emphasis lh-1 mb-3" >About Us</h1>
+            <h1 class="display-3 semibold text-body-emphasis lh-1 mb-3">The Story of <br>pena</h1>
+            <p class="lead fw-normal">Learn more about why we created the pena.</p>
+          </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 my-5 text-center mision">
+      <h1 class="display-5 semibold text-body-emphasis">Our mission to create an <br>environment for thinkers</h1>
+    </div>
+
+    <div class="container">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5 px-0px-md-4  mx-5 flex-sm-column-reverse flex-column-reverse flex-md-column-reverse">
+        <div class="col-10 col-sm-8 col-lg-5">
+          <img src="image/sosmed.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-7 mx-auto problem-solve problem" style="padding: 0 2rem;">
+          <h1 class="display-10 semibold texth1 text-body-emphasis lh-1 mb-3">Current Problems</h1>
+          <p class="lead fw-normal">In a world driven by quick, bite-sized content, platforms like TikTok and Instagram are changing how we consume information. We’re constantly scrolling through short videos that entertain but rarely challenge us to think deeper.</p>
+          <p class="lead fw-normal">This shift is making it harder for us to stay focused and appreciate meaningful ideas. As society becomes more drawn to fleeting entertainment, the big, innovative concepts that could shape our future are getting lost in the noise.</p>
+        </div>
+      </div>
+   
+    </div>
+    <div class="container">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5 px-0 px-md-4 mx-5 flex-sm-column-reverse flex-column-reverse flex-md-column-reverse">
+        <div class="col-10 col-sm-8 col-lg-5">
+          <img src="image/pena.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-7 mx-auto problem-solve solution" style="padding: 0 2rem;">
+          <h1 class="display-10 semibold texth1 text-body-emphasis lh-1 mb-3">Our Answer</h1>
+          <p class="lead fw-normal">To address this, we created Pena—a platform that offers the engaging experience of social media but with a focus on valuable, in-depth content. By providing a space for thinkers and innovators to share their ideas through books, journals, and blogs, Pena fosters meaningful connections and collaboration.</p>
+          <p class="lead fw-normal">Our aim is to revive the appreciation for profound ideas and create a community where big, world-changing concepts can flourish.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row g-5 py-5 px-4 mx-5 mb-5 border-bottom justify-content-start">
+        <div class="col-lg-7 problem-solve quotes text katakata" style="padding: 0 2rem;">
+          <h1 class="display-10 semibold texth1 text-body-emphasis lh-1 mb-3">"The mind is everything. What you think, you become."</h1>
+          <p class="lead fw-normal">Buddha.</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="container">
+      <footer class="py-0 px-3">
+        <div class="row">
+          <div class="col-4 col-md-2 mb-3 col-sm- ">
+            <h5 class="subfooter">Explore</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Help Center</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Community</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-4 col-md-2 mb-3 col-sm-4 ">
+            <h5 class="subfooter">Feature</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pena AI</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pena Journal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pena Blog</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pena Book</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pena Academy</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-4 col-md-2 mb-3 col-sm-4 ">
+            <h5 class="subfooter">Company</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About Us</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Term and Privacy</a></li>
+              
+            </ul>
+          </div>
+    
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h3 class="fw-bold pena"><img src="icon/new logo2.png" height="50" alt="" class="gambar-logo"> Pena</h3>
+              <p class="webspacing">Is a website for creating various stories, journals and blogs in your own handwriting.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-0 border-top">
+          <p>© 2024 Pena, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="icon/x.svg" height="28" alt=""></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="icon/fb.svg" height="28" alt=""></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="icon/tel.svg" height="28" alt=""></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="icon/yt.svg" height="28" alt=""></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="icon/ig.svg" height="28" alt=""></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.mision h1');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.problem h1');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.problem p');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.solution h1');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.solution p');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.katakata h1');
+            elements.forEach((el) => observer.observe(el));
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.katakata p');
+            elements.forEach((el) => observer.observe(el));
+      });
+    </script>
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
